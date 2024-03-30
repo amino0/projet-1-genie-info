@@ -17,5 +17,17 @@
 <br><br>
 <label for="">Aller a la page 3</label>
 <a href="{{url('/bonsoir')}}">click ici</a>
+
+
+<br><br>
+<form method="POST" action="{{url('/insert')}}">
+    @csrf
+    <input type="text" name='prenom' placeholder="veuillez saisir votre prenom ?">
+    <input type="text" name='nom' placeholder="veuillez saisir votre nom ?">
+    <br>
+    <input type="date" name='date' >
+    <input type="submit">
+
+</form>
 </body>
 </html>

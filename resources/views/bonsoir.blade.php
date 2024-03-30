@@ -52,9 +52,11 @@
                 </a>
             </div>
             <h1 class="error-title">Bonsoir Tout le Monde</h1>
-            <p class="error-text">Thank you for visiting us.</p>
-            <p class="text">We are currently working on making some improvements <br/> to give you better user experience.</p>
-            <p class="text">Please visit us again shortly.</p>
+            <p class="error-text">Voici les etudiants inscrit.</p>
+          @foreach ($etudiants as $etudiant )
+              
+            <p class="text">  {{$etudiant->prenom}} {{$etudiant->nom}} {{$etudiant->date}} <a href="{{url("/delete/$etudiant->id")}}"><b>supprimer</b> </a> </p> 
+        @endforeach
             <a href="{{url('/')}}" class="btn btn-dark mt-4">Home</a>
         </div>
     </div>
