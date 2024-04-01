@@ -29,4 +29,21 @@ class homepagecontroller extends Controller
 
 
     }
+    public function modifier_etudiant($id){
+        $etudiants = DB::select("select * from etudiants where id = $id");
+       return view('edit_etudiant',compact('etudiants'));
+    }
+    public function edit(Request $request){
+        $nom = request('nom');
+        $prenom = request('prenom');
+        $date = request('date');
+        $id = request('id');
+
+        DB::table('etudiants')
+        ->where('id', $id)
+        ->update(['nom' => $nom,'prenom' => $prenom,'date' => $date]);
+
+
+        return redirect('/bonsoir'); 
+    }
 }

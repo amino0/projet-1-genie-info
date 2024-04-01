@@ -21,3 +21,5 @@ Route::get('/', function () {
 Route::get('/bonsoir',[homepagecontroller::class, 'index'])->name('index');
 Route::post('/insert',[homepagecontroller::class, 'ajoute_etudiant'])->name('ajoute_etudiant');
 Route::get('/delete/{id}',[homepagecontroller::class, 'supprimer_etudiant'])->name('supprimer_etudiant');
+Route::get('/modifier/{id}',[homepagecontroller::class, 'modifier_etudiant'])->name('modifier_etudiant');
+Route::post('/edit',[homepagecontroller::class, 'edit'])->name('edit');

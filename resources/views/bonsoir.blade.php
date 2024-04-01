@@ -55,7 +55,11 @@
             <p class="error-text">Voici les etudiants inscrit.</p>
           @foreach ($etudiants as $etudiant )
               
-            <p class="text">  {{$etudiant->prenom}} {{$etudiant->nom}} {{$etudiant->date}} <a href="{{url("/delete/$etudiant->id")}}"><b>supprimer</b> </a> </p> 
+            <p class="text">  {{$etudiant->prenom}} {{$etudiant->nom}} {{$etudiant->date}} 
+
+                <a href="{{url("/delete/$etudiant->id")}}"><b><font color="red">supprimer</font></b> </a> 
+                
+                <a href="{{url("/modifier/$etudiant->id")}}"><b><i> <font color="green">modifier</font></i></b> </a> </p> 
         @endforeach
             <a href="{{url('/')}}" class="btn btn-dark mt-4">Home</a>
         </div>
